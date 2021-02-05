@@ -10,7 +10,7 @@ public class Main {
     // System.out.println(shouldWakeUp(false, 2));
 
     // isLeapYear
-    // System.out.println(isLeapYear(-1600));
+     System.out.println(isLeapYear(-1600));
 
     // areEqualByThreeDecimalPlaces
     // System.out.println(areEqualByThreeDecimalPlaces(3.175, 3.176));
@@ -18,9 +18,100 @@ public class Main {
     // hasEqualSum
     // System.out.println(hasEqualSum(1,1,2));
 
-    System.out.println(hasTeen(22, 23, 34));
+    // hasTeen
+    // System.out.println(hasTeen(22, 23, 34));
 
+    // area
+    // System.out.println(area(5.0));
+
+    // isCatPlaying
+    // System.out.println(isCatPlaying(true, 10));
+
+    // printDayOfWeek
+    // printDayOfWeek(1);
   }
+
+  private static final String INVALID = "Invalid value";
+
+  // 5.2.21
+
+  public static void printNumberInWord(int number) {
+    switch (number) {
+      case 0:
+        System.out.println("ZERO");
+        break;
+      case 1:
+        System.out.println("ONE");
+        break;
+      case 2:
+        System.out.println("TWO");
+        break;
+      case 3:
+        System.out.println("THREE");
+        break;
+      case 4:
+        System.out.println("FOUR");
+        break;
+      case 5:
+        System.out.println("FIVE");
+        break;
+      case 6:
+        System.out.println("SIX");
+        break;
+      case 7:
+        System.out.println("SEVEN");
+        break;
+      case 8:
+        System.out.println("EIGHT");
+        break;
+      case 9:
+        System.out.println("NINE");
+        break;
+      default:
+        System.out.println("OTHER");
+        break;
+    }
+  }
+
+  public static void printDayOfWeek(int day) {
+    String sunday = "Sunday";
+    String monday = "Monday";
+    String tuesday = "Tuesday";
+
+    switch (day) {
+      case 0:
+        System.out.println(sunday);
+        break;
+      case 1:
+        System.out.println(monday);
+        break;
+      default:
+        System.out.println(INVALID);
+    }
+  }
+
+  public static boolean isCatPlaying(boolean summer, int temperature) {
+    if (!summer && (temperature >= 25 && temperature <= 35)) {
+      return true;
+    } else return summer && (temperature >= 25 && temperature <= 45);
+  }
+
+  public static double area(double radius) {
+    if (radius < 1) {
+      return -1;
+    } else {
+      return radius * radius * Math.PI;
+    }
+  }
+
+  public static double area(double x, double y) {
+    if (x < 1 || y < 1) {
+      return -1;
+    } else {
+      return x * y;
+    }
+  }
+  //
 
   public static boolean hasTeen(int first, int second, int third) {
     return isTeen(first) || isTeen(second) || isTeen(third);
