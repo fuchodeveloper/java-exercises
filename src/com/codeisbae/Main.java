@@ -32,9 +32,31 @@ public class Main {
   }
 
   private static final String INVALID = "Invalid value";
+  private static final int NEGATIVE_ONE = -1;
+
+  // 6.2.21
+  public static int getDaysInMonth(int month, int year) {
+    if (((month < 1) || (month > 12)) || ((year < 1) || (year > 9999))) {
+      return NEGATIVE_ONE;
+    }
+    if (isLeapYear(year) && month == 2) {
+      return 29;
+    }
+
+    switch (month) {
+      case 11:
+      case 4:
+      case 6:
+      case 9:
+        return 30;
+      case 2:
+        return 28;
+      default:
+        return 31;
+    }
+  }
 
   // 5.2.21
-
   public static void printNumberInWord(int number) {
     switch (number) {
       case 0:
