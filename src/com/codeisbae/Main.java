@@ -10,7 +10,7 @@ public class Main {
     // System.out.println(shouldWakeUp(false, 2));
 
     // isLeapYear
-     System.out.println(isLeapYear(-1600));
+     //System.out.println(isLeapYear(-1600));
 
     // areEqualByThreeDecimalPlaces
     // System.out.println(areEqualByThreeDecimalPlaces(3.175, 3.176));
@@ -29,10 +29,99 @@ public class Main {
 
     // printDayOfWeek
     // printDayOfWeek(1);
+
+    // for statement
+    //for (int i = 8; i >= 2; i--) {
+    //  System.out.println(String.format("%.2f", calculateInterest(10000.0, i)));
+    //}
+
+    // dynamic prime number check
+    /*int prime = 0;
+    for (int i = 3; i < 35; i++) {
+      if (isPrime(i)) {
+        prime++;
+        System.out.println(i);
+        if (prime == 3) break;
+      }
+    }*/
+
+    // sum of 3 and 5 challenge
+    // sumThreeAndFive();
+
+    System.out.println(sumOdd(1,100));
+    System.out.println(sumOdd(10,5));
   }
 
   private static final String INVALID = "Invalid value";
   private static final int NEGATIVE_ONE = -1;
+
+  // 8.2.2021
+
+  public static void whileAndDoWhile() {
+    // while loop
+    int count = 1;
+    while (count != 6) {
+      System.out.println("count: " + count);
+      count++;
+    }
+
+    // do..while loop
+    int counter = 1;
+    do {
+      System.out.println("counter: " + counter);
+      counter++;
+    } while(counter != 6);
+  }
+
+  public static boolean isOdd(int number) {
+    if (number < 0) return false;
+
+    return (number % 2 != 0);
+  }
+
+  public static int sumOdd(int start, int end) {
+    int sum = 0;
+
+    if (end < start || start < 0) {
+      return -1;
+    }
+
+    for (int i = start; i <= end; i++) {
+        if (isOdd(i)) {
+          sum += i;
+        }
+    }
+    return sum;
+  }
+
+  public static void sumThreeAndFive() {
+    int sum = 0;
+    int count = 0;
+    for (int i = 1; i <= 1000; i++) {
+      if (i % 3 == 0 && i % 5 == 0) {
+        sum += i;
+        count++;
+        System.out.println("Can be divided by both 3 & 5 = " + i);
+      }
+      if (count == 5) {
+        System.out.println("Total sum = " + sum);
+        break;
+      }
+    }
+  }
+
+  public static boolean isPrime(int number) {
+    if (number == 1) return false;
+
+    for (int i = 2; i <= number/2; i++) {
+      if (number % i == 0) return false;
+    }
+    return true;
+  }
+
+  public static double calculateInterest(double amount, double interestRate) {
+    return amount * (interestRate / 100);
+  }
 
   // 6.2.21
   public static int getDaysInMonth(int month, int year) {
